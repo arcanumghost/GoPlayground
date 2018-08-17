@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"GoPlayground/strutil"
+	"fmt"
+)
 
 const (
 	// Create a huge number by shifting a 1 bit left 100 places.
@@ -20,9 +23,25 @@ func fizzbuzz(i int) {
 	} else {
 		fmt.Println(i)
 	}
+
+	//strutil.Reverse()
 }
+
 func main() {
+	// fizzbuzz
 	for i := 1; i <= 100; i++ {
 		fizzbuzz(i)
 	}
+
+	// rune-printing example
+	const nihongo = "日本語"
+	for index, runeValue := range nihongo {
+		fmt.Printf("%#U starts at byte position %d\n", runeValue, index)
+	}
+
+	// Reverse
+	fmt.Printf(strutil.Reverse(nihongo) + "\n")
+
+	// Reverse words
+	fmt.Printf(strutil.ReverseWords(" Reverse my  words, bitch ") + "\n")
 }
